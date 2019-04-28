@@ -1,9 +1,18 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.intenthq.challenge;
+/**
+ *
+ * @author shuja
+ */
 
 import java.util.List;
 
 public class JNiceStrings {
-  // From http://adventofcode.com/day/5
+    // From http://adventofcode.com/day/5
   //  --- Day 5: Doesn't He Have Intern-Elves For This? ---
   //
   //  Santa needs help figuring out which strings in his text file are naughty or nice.
@@ -21,9 +30,25 @@ public class JNiceStrings {
   //    haegwjzuvuyypxyu is naughty because it contains the string xy.
   //    dvszwmarrgswjxmb is naughty because it contains only one vowel.
   //    How many strings are nice?
-
+        
   public static int nice(List<String> xs) {
-    throw new RuntimeException("Not implemented");
-  }
-
+      
+      int niceCounts=0;
+      RuleService serviceObject= new RuleServiceImp();
+      for(String s: xs)
+      {
+         if(serviceObject.isInvalidStringNotExists(s))
+         {
+             boolean isVowel= serviceObject.isVowelExists(s);
+             boolean isDoubleLetter = serviceObject.isConsectiveDoubleLetterExists(s);
+             if(isVowel==true && isDoubleLetter==true)
+             {
+             niceCounts+=1;
+             }
+         }
+         
+      }
+      
+      return niceCounts;
+    }
 }
