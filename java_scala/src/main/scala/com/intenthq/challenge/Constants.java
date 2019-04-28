@@ -9,7 +9,7 @@ package com.intenthq.challenge;
  *
  * @author shuja
  */
-public final class Constants {
+public class Constants {
     
     public static final String[] invalidStrings = {"ab", "cd", "pq","xy"};
     public static final char[] vowelArray = { 'a', 'e', 'i', 'o', 'u'};
